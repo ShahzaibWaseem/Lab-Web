@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+    <style type="text/css">
+        button{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            color: white;
+        }
+        * {
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        #inputTextField {
+            padding: 7px 47px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var textip= document.calc.inputTextField.value;
+        var stored;  
+        function number(value){
+            document.calc.inputTextField.value +=value;
+        }
+        function cle(value){
+            document.calc.inputTextField.value =value;
+        }
+        function evalua(){
+            document.calc.inputTextField.value = eval(document.calc.inputTextField.value);
+        }
+        function sqrti(){
+            document.calc.inputTextField.value = Math.sqrt(document.calc.inputTextField.value);
+
+        }
+        function square() {
+            document.calc.inputTextField.value = document.calc.inputTextField.value * document.calc.inputTextField.value;
+        }
+        function over(){
+            document.calc.inputTextField.value = 1/document.calc.inputTextField.value ;
+        }
+
+        function ms(){
+            if(eval(document.calc.inputTextField.value)== document.calc.inputTextField.value ){
+              stored= document.calc.inputTextField.value ;
+          }
+        }
+        function mc(){
+          stored = 0;
+        }
+        function mr(){
+          document.calc.inputTextField.value=  cle();
+          document.calc.inputTextField.value = stored;
+        }
+        function dot(){
+          document.calc.inputTextField.value += ".0";
+        }
+        function mplus(){
+           stored += textip;
+        }
+</script>
+
+<body>
+  <form name="calc">
+    <h1>JavaScript Based Web Calculator</h1>
+    <div>
+      <input type="text" id="inputTextField" name="inputTextField"><br><br>
+
+      <button type="button" onclick="mc()">MC</button>
+      <button type="button" onclick="number(value)" value="0">0</button>
+      <button type="button" onclick="number(value)" value="1">1</button>
+      <button type="button" onclick="number(value)" value="2">2</button>
+      <button type="button" onclick="number(value)" value="+">+</button><br>
+
+      <button type="button" onclick="ms()">MS</button>
+      <button type="button" onclick="number(value)" value="3">3</button>
+      <button type="button" onclick="number(value)" value="4">4</button>
+      <button type="button" onclick="number(value)" value="5">5</button>
+      <button type="button" onclick="number(value)" value="-">-</button><br>
+
+      <button type="button" onclick="mr()">MR</button>
+      <button type="button" onclick="number(value)" value="6">6</button>
+      <button type="button" onclick="number(value)" value="7">7</button>
+      <button type="button" onclick="number(value)" value="8">8</button>
+      <button type="button" onclick="number(value)" value="*">x</button><br>
+
+      <button type="button" onclick="mplus()">M+</button>
+      <button type="button" onclick="number(value)" value="9">9</button>
+      <button type="button" onclick="plmn(value)">±</button>
+      <button type="button" onclick="evalua()">=</button>
+      <button type="button" onclick="number(value)" value="/">/</button><br>
+
+      <button type="button" onclick="over()">1/x</button>
+      <button type="button" onclick="dot()">.</button>
+      <button type="button" onclick="square()">x2</button>
+      <button type="button" onclick="sqrti(value)" >√</button>
+      <button type="button" onclick="cle(value) "value="">C</button><br>
+  </div>
+
+</form>
+</body>
+</html>

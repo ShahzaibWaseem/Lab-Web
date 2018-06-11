@@ -1,0 +1,124 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE studentBook [
+	<!-- STUDENT -->
+	<!ELEMENT studentBook (students,courses)>
+	<!ELEMENT students (student+)>
+	<!ELEMENT courses (course+)>
+
+	<!ELEMENT student (degreeStudent| specialStudent)>
+	<!-- DEGREE STUDENT -->
+	<!ELEMENT degreeStudent
+		(STID, name, phoneNumber?, studentNo, streetName, city, province, coursesTaken*, degree)>
+	
+	<!-- SPECIAL STUDENT -->
+	<!ELEMENT specialStudent
+		(STID, name, phoneNumber?, studentNo, streetName, city, province, coursesTaken*)>
+	
+	<!-- STUDENT ELEMENTS -->
+	<!ELEMENT STID 				(#PCDATA)>
+	<!ELEMENT name 				(#PCDATA)>
+	<!ELEMENT phoneNumber 		(#PCDATA)>
+	<!ELEMENT studentNo 		(#PCDATA)>
+	<!ELEMENT streetName 		(#PCDATA)>
+	<!ELEMENT city 				(#PCDATA)>
+	<!ELEMENT province 			(#PCDATA)>
+	<!ELEMENT coursesTaken 		EMPTY>
+	<!ELEMENT degree 			EMPTY>
+
+	<!-- STUDENT ATTRIBUTES -->
+	<!ATTLIST degree code (BSc | BEng | BA) #REQUIRED>
+	<!ATTLIST coursesTaken CID (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10) #IMPLIED>	
+
+	<!-- COURSE -->
+	<!ELEMENT course 
+		(CID, courseName, department, allowableStudents+)>
+
+	<!-- COURSE ELEMENTS -->
+	<!ELEMENT CID 				EMPTY>
+	<!ELEMENT courseName 		(#PCDATA)>
+	<!ELEMENT department		EMPTY>
+	<!ELEMENT allowableStudents	EMPTY>
+
+
+	<!-- COURSE ATTRIBUTES-->
+	<!ATTLIST CID ID (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10) #REQUIRED>
+	<!ATTLIST department code (CS | MAT | Economics) #IMPLIED>
+	<!ATTLIST allowableStudents type (degreeStudent | specialStudent) #IMPLIED>
+]>
+
+<studentBook>
+	<!-- STUDENTS -->
+	<students>
+		<student>
+			<degreeStudent>
+				<STID>995435245</STID>
+				<name>Ali</name>
+				<phoneNumber>416-4245979</phoneNumber>
+				<studentNo>406</studentNo>
+				<streetName>Main</streetName>
+				<city>Toronto</city>
+				<province>ON</province>
+				
+				<coursesTaken CID="1"/>
+				<coursesTaken CID="3"/>
+				<coursesTaken CID="4"/>
+				<coursesTaken CID="5"/>
+				<degree code="BSc"/>
+			</degreeStudent>
+		</student>
+
+		<student>
+			<specialStudent>
+				<STID>995435245</STID>
+				<name>Bob</name>
+				<phoneNumber>416-4245979</phoneNumber>
+				<studentNo>12</studentNo>
+				<streetName>Charles</streetName>
+				<city>Ottawa</city>
+				<province>ON</province>
+		
+				<coursesTaken CID="3"/>
+				<coursesTaken CID="4"/>
+				<coursesTaken CID="5"/>
+			</specialStudent>
+		</student>
+
+		<student>
+			<specialStudent>
+				<STID>995435245</STID>
+				<name>Carlos</name>
+				<phoneNumber>416-4245979</phoneNumber>
+				<studentNo>5</studentNo>
+				<streetName>King</streetName>
+				<city>Oshawa</city>
+				<province>ON</province>
+			</specialStudent>
+		</student>
+	</students>
+
+
+	<!-- COURSES -->
+	<courses>
+		<course>
+			<CID ID="1"/>
+			<courseName>Introduction to Databases</courseName>
+			<department code="CS"/>
+			<allowableStudents type="degreeStudent"/>
+			<allowableStudents type="specialStudent"/>
+		</course>
+		<course>
+			<CID ID="2"/>
+			<courseName>Numerical Methods</courseName>
+			<department code="CS"/>
+			<allowableStudents type="degreeStudent"/>
+			<allowableStudents type="specialStudent"/>
+		</course>
+		<course>
+			<CID ID="3"/>
+			<courseName>Operating Systems</courseName>
+			<department code="CS"/>
+			<allowableStudents type="degreeStudent"/>
+		</course>
+	</courses>
+</studentBook>

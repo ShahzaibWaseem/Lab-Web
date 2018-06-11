@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html{
+				font-family:"Comic Sans MS";
+				background: #C0C0C0;
+			}
+			ul {
+				background: #D3D3D3;
+				margin: 5px;
+			}
+			ul ul {
+				margin: 8px;
+				background: #D8D8D8;
+			}
+
+			a { text-decoration: none; }
+
+			/* Selecting Text */
+			::selection {
+			    background: #1abc9c;            /*Torquoise*/
+			}
+
+			/* Animations */
+			#fadeIn {
+				-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+			}
+
+			@keyframes fadein {
+				from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+
+			@-webkit-keyframes fadein {
+				from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+
+			/* Tooltip */
+			.tooltip {
+			    position: relative;
+			    display: inline-block;
+			}
+
+			.tooltip .tooltiptext {
+			    visibility: hidden;
+			    background-color: black;
+			    color: #fff;
+			    text-align: center;
+			    border-radius: 6px;
+			    padding: 5px 0;
+			    position: absolute;
+			    z-index: 1;
+			    left: 50%;
+			    margin-left: -60px;
+			}
+
+			.tooltip .tooltiptext::after {
+			    content: "";
+			    position: absolute;
+			    bottom: 100%;
+			    left: 50%;
+			    margin-left: -5px;
+			    border-width: 5px;
+			    border-style: solid;
+			    border-color: transparent transparent black transparent;
+			}
+
+			.tooltip:hover .tooltiptext {
+			    visibility: visible;
+			}
+	    </style>
+		<title>Lists and Hyperlinks</title>
+	</head>
+	<body>
+		<div class="tooltip"><h1><a href="B_shahzaibwaseem_2_2.html" style="color:black;">Lists and Hyperlinks</a></h1>
+        	<span class="tooltiptext">link to task 2</span>
+        </div>
+
+		<div id="fadeIn">
+			There are two types of <em>lists</em> in HTML:
+			<ol>
+				<li>Ordered List.</li>
+				<li>Unordered List.</li>
+			</ol>
+
+			This is an Ordered list
+			<ol>
+				<li>Apple</li>
+				<li>Banana</li>
+				<li>Mango</li>
+				<li>Orange</li>
+				<li>Strawberry</li>
+			</ol>
+
+			This is an Unordered list
+			<ul>
+				<li>Harvard University</li>
+				<li>Stanford University</li>
+				<li>MIT</li>
+				<li>NUST</li>
+				<li>CMU</li>
+			</ul>
+
+			This is a nested unordered list of links:
+			<ul>
+				<li>Online Validator:
+					<ul>
+						<li>
+							<div class="tooltip"><a href="https://validator.w3.org/">W3C Online HTML Validator</a>
+								<span class="tooltiptext">https://validator.w3.org/</span>
+							</div>
+						</li>
+						<li>
+							<div class="tooltip"><a href="https://jigsaw.w3.org/css-validator/">W3C Online CSS Validator</a>
+								<span class="tooltiptext">https://jigsaw.w3.org/css-validator/</span>
+							</div>
+						</li>
+						
+					</ul>
+				</li>
+
+				<li>Specifications:
+					<ul>
+						<li>
+							<div class="tooltip"><a href="http://www.w3.org/TR/html5/">HTML5</a>
+								<span class="tooltiptext">http://www.w3.org/TR/html5/</span>
+							</div>
+						</li>
+						<li>
+							<div class="tooltip"><a href="http://www.w3.org/TR/css3-selectors/">CSS3 Selectors</a>
+								<span class="tooltiptext">http://www.w3.org/TR/css3-selectors/</span>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>		
+	</body>
+</html>

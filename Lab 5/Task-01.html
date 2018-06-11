@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- ***** RWD : STEP 1 ***** -->
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		/****** RWD : STEP 2 ******/
+		* {
+			box-sizing: border-box;
+		}
+
+		/****** RWD : STEP 3 ******/
+		[class*="col-"] {
+			/* For Mobile Phones: */
+			width: 100%;
+		}
+
+		@media only screen and (min-width: 600px) {
+			/* For tablets: */
+			.col-m-1 {width: 8.33%;}
+			.col-m-2 {width: 16.66%;}
+			.col-m-3 {width: 25%;}
+			.col-m-4 {width: 33.33%;}
+			.col-m-5 {width: 41.66%;}
+			.col-m-6 {width: 50%;}
+			.col-m-7 {width: 58.33%;}
+			.col-m-8 {width: 66.66%;}
+			.col-m-9 {width: 75%;}
+			.col-m-10 {width: 83.33%;}
+			.col-m-11 {width: 91.66%;}
+			.col-m-12 {width: 100%;}
+		}
+		@media only screen and (min-width: 768px) {
+			/* For desktop: */
+			.col-1 {width: 8.33%;}
+			.col-2 {width: 16.66%;}
+			.col-3 {width: 25%;}
+			.col-4 {width: 33.33%;}
+			.col-5 {width: 41.66%;}
+			.col-6 {width: 50%;}
+			.col-7 {width: 58.33%;}
+			.col-8 {width: 66.66%;}
+			.col-9 {width: 75%;}
+			.col-10 {width: 83.33%;}
+			.col-11 {width: 91.66%;}
+			.col-12 {width: 100%;}
+		}
+		/****** RWD : STEP 4 ******/
+		[class*="col-"] {
+			float: left;
+			padding: 5px;
+		}
+
+		/****** RWD : STEP 5 ******/
+		.row::after {
+			content: "";
+			clear: both;
+			display: block;
+		}
+		
+		/****** My Custom Style ******/
+		body {
+			font-family: sans-serif;
+			background-color: white;
+		}
+
+		.head {
+			float: none;
+    		padding: 19px 00 0;
+			background-color: black !important;	
+			color: white;
+			background: url(/portal/theme/image.php/nust/theme/1514959743/N) no-repeat;
+			padding-left: 20%;
+			padding-right: 20%;
+			background-position: 3% 10%;
+    		border-bottom: 5px solid #fff;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+
+		.clear {
+			clear: right;
+		}
+
+		.menu ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.menu li a{
+			text-decoration: none;
+			color: black;
+		}
+
+		.menu li:hover {
+			background-color: lightgray;
+		}
+
+		.content-header {
+			border-bottom: 1px solid black;
+		}
+
+		.picture{
+		    width: 43px;
+		    overflow: hidden;
+		}
+
+		.subject {
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		.author {
+			font-style: italic;
+			font-size: 10px;
+		}
+
+		.time {
+			font-size: 10px;
+			font-family: Arial;
+		}
+		.news-item {
+			margin-top: 0;
+			border-radius: 4px;
+			overflow: auto;
+			padding: 12px 12px 12px 12px;
+			border: 1px solid #efefef;
+			background-color: #fff;
+			margin-bottom: 8px;
+		}
+
+		.footer {
+			text-align: center;
+		}
+	</style>
+	<title>LMS</title>
+	<link rel="shortcut icon" href="https://lms.nust.edu.pk/portal/theme/image.php/nust/theme/1514959743/favicon" />
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<div class="head">
+		<div><img src="http://nust.edu.pk/SiteCollectionImages/logo_SEECS_1.PNG" width="75px" height="50px"> <h1>LMS Portal</h1></div>
+		<div style="float: right">You are not logged in (<a href="https://lms.nust.edu.pk/portal/login/index.php">Log in</a>)</div>
+		<div class="clear"></div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- Side-Menus (Left) -->
+		<div class="col-2 col-m-2">		
+			<div class="menu" data-role="collapsible">
+				<h4>Home</h4>
+				<ul data-role="listview">
+					<li><a href="https://lms.nust.edu.pk/portal/mod/forum/view.php?id=2">Site News</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/forum/view.php?id=26">Troubleshooting</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/forum/view.php?id=3623">Suggestions</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/url/view.php?id=32049">Training</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/data/view.php?id=2901">FAQ</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/page/view.php?id=14002">Contact Us</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/url/view.php?id=91120">Digital Library</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/page/view.php?id=115333">Downloads</a></li>
+					<li>Courses</li>
+				</ul>
+			</div>
+
+			<div class="menu" data-role="collapsible">
+				<h4>Navigation</h4>
+				<ul data-role="listview">
+					<li><a href="https://lms.nust.edu.pk/portal/mod/forum/view.php?id=2">Site News</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/forum/view.php?id=26">Troubleshooting</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/forum/view.php?id=3623">Suggestions</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/url/view.php?id=32049">Training</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/data/view.php?id=2901">FAQ</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/page/view.php?id=14002">Contact Us</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/url/view.php?id=91120">Digital Library</a></li>
+					<li><a href="https://lms.nust.edu.pk/portal/mod/page/view.php?id=115333">Downloads</a></li>
+					<li>Courses</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Main Content (Center) -->
+		<div class="col-8 col-m-9">
+			<h1>Site News</h1>
+			<div class="news-item">
+				<div class="content-header">
+					<div class="picture"><a href="https://lms.nust.edu.pk/portal/user/profile.php?id=81114"><img src="https://lms.nust.edu.pk/portal/pluginfile.php/423030/user/icon/nust/f2?rev=3888956" width="35" height="35"/></a></div>
+					<div class="subject">1st Feedback Form</div>
+					<div class="author">Kashif Khan</div>
+					<div class="time">Monday, 5 March 2018, 8:58 AM</div>
+				</div>
+				<div class="content">
+					<b>Respected Deans/Faculty Members,</b><br>
+
+					Assalam O Alaikum<br>
+					 
+					Reference: DCTM No. 28/2018 dated 28 February 2018.<br>
+
+					<p>The Learning Management System(LMS) is ready by now for 1st LMS Feedback from 12 Mar to 25 Mar 2018 for students and all of the activities like Creation of Courses, Enrollments of Faculty and Students, Creation of accounts for new students and faculty members have been completed for Spring Semester 2018 on Learning Management System (LMS).</p>
+
+					Faculty members and Students are requested to check:
+					<ol>
+					<li>The courses being taught by the respective faculty members</li>
+					<li>The total number of students are enrolled for the specific course</li>
+					<li>The classes/courses are scheduled according to the latest Approved Time Table</li>
+					</ol>
+					<b>Note :</b> New faculty members and students are also requested to get the login credentials (username/password) for LMS from Help Desk / QA Office.<br>
+					Feel free to contact QA Office (53035) or email to LMS Coordinator (kashifkhan@pnec.nust.edu.pk) in case of any ambiguity/discrepancy.<br><br>
+
+					<b>Best Regards,</b><br>
+					Kashif Khan, LMS Coordinator/Asst. Web Master<br>
+					National University of Sciences &amp; Technology,<br>
+					Pakistan Navy Engineering College<br>
+					Off:    +92-21-48503082<br>
+					Cell:  +92-300-2921635<br>
+					Email: kashifkhan@pnec.nust.edu.pk<br>
+				</div>
+			</div>
+			<div class="news-item">
+				<div class="content-header">
+					<div class="picture"><a href="https://lms.nust.edu.pk/portal/user/profile.php?id=81114"><img src="https://lms.nust.edu.pk/portal/pluginfile.php/423030/user/icon/nust/f2?rev=3888956"width="35" height="35"/></a></div>
+					<div class="subject">1st Feedback Form</div>
+					<div class="author">Kashif Khan</div>
+					<div class="time">Monday, 5 March 2018, 8:58 AM</div>
+				</div>
+				<div class="content">
+					<b>Respected Deans/Faculty Members,</b><br>
+
+					Assalam O Alaikum<br>
+					 
+					Reference: DCTM No. 28/2018 dated 28 February 2018.<br>
+
+					<p>The Learning Management System(LMS) is ready by now for 1st LMS Feedback from 12 Mar to 25 Mar 2018 for students and all of the activities like Creation of Courses, Enrollments of Faculty and Students, Creation of accounts for new students and faculty members have been completed for Spring Semester 2018 on Learning Management System (LMS).</p>
+
+					Faculty members and Students are requested to check:
+					<ol>
+					<li>The courses being taught by the respective faculty members</li>
+					<li>The total number of students are enrolled for the specific course</li>
+					<li>The classes/courses are scheduled according to the latest Approved Time Table</li>
+					</ol>
+					<b>Note :</b> New faculty members and students are also requested to get the login credentials (username/password) for LMS from Help Desk / QA Office.<br>
+					Feel free to contact QA Office (53035) or email to LMS Coordinator (kashifkhan@pnec.nust.edu.pk) in case of any ambiguity/discrepancy.<br><br>
+					<img src="https://lms.nust.edu.pk/portal/pluginfile.php/25/mod_forum/post/33401/28168172_1792419350817895_3426241648540032975_n.jpg" class="col-12 col-m-12"><br>
+					<b>Best Regards,</b><br>
+					Kashif Khan, LMS Coordinator/Asst. Web Master<br>
+					National University of Sciences &amp; Technology,<br>
+					Pakistan Navy Engineering College<br>
+					Off:    +92-21-48503082<br>
+					Cell:  +92-300-2921635<br>
+					Email: kashifkhan@pnec.nust.edu.pk<br>
+				</div>
+			</div>
+		</div>
+
+		<!-- Login Form (Right) -->
+		<div class="col-2 col-m-12">
+			<form>
+				<label>Username</label>
+				<input type="text" placeholder="Enter your Username">
+
+				<label>Password</label>
+				<input type="password" placeholder="Enter your Password">
+
+				<a href="https://lms.nust.edu.pk/portal/login/index.php"><input type="button" value="Submit"></a>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="footer col-12 col-m-12">
+			You are currently using guest access (<a href="https://lms.nust.edu.pk/portal/login/index.php">Login</a>)<br>
+			<img src="https://lms.nust.edu.pk/portal/theme/image.php/nust/core/1514959743/moodlelogo">
+		</div>
+	</div>
+</body>
+</html>

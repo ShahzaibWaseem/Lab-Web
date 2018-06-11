@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tables</title>
+		<style>
+			html{
+				font-family:"Comic Sans MS";
+				text-align: center;
+			}
+			table {
+			    border-collapse: collapse;
+			    width: 100%;
+			}
+
+			td, th {
+			    border: 1px solid #dddddd;
+			    padding: 8px;
+			}
+
+			tr:nth-child(even) {
+			    background-color: #dddddd;
+			}
+
+			tr:hover {
+				background-color: #d2d2d2;
+			}
+			
+			a { color: inherit; text-decoration: none; }
+
+			/* Selecting Text */
+			::selection {
+			    background: #1abc9c;            /*Torquoise*/
+			}
+
+			/* Animations */
+			#fadeIn {
+				-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+			}
+
+			@keyframes fadein {
+				from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+
+			@-webkit-keyframes fadein {
+				from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+
+			/* Tooltip */
+			.tooltip {
+			    position: relative;
+			    display: inline-block;
+			}
+
+			.tooltip .tooltiptext {
+			    visibility: hidden;
+			    background-color: black;
+			    color: #fff;
+			    text-align: center;
+			    border-radius: 6px;
+			    padding: 5px 0;
+			    position: absolute;
+			    z-index: 1;
+			    left: 50%;
+			    margin-left: -60px;
+			}
+
+			.tooltip .tooltiptext::after {
+			    content: "";
+			    position: absolute;
+			    bottom: 100%;
+			    left: 50%;
+			    margin-left: -5px;
+			    border-width: 5px;
+			    border-style: solid;
+			    border-color: transparent transparent black transparent;
+			}
+
+			.tooltip:hover .tooltiptext {
+			    visibility: visible;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="tooltip"><h1><a href="B_shahzaibwaseem_2_1.html" style="color:black;">My Schedule</a></h1>
+        	<span class="tooltiptext">link to task 1</span>
+        </div>
+		<table id="fadeIn">
+		<!-- TABLE HEADERS -->
+		<tr>
+			<th>Subject</th>
+			<th>Day</th>
+				<th>Time</th>
+				<th>Instructor</th>
+			</tr>
+
+			<!-- TABLE ROWS -->
+			<!-- CAO -->
+			<tr>
+				<td>CAO</td>
+				<td>Monday</td>
+				<td>9:00-10:00</td>
+				<td>Dr. Nasir Mahmood</td>
+			</tr>
+
+			<tr>
+				<td>CAO</td>
+				<td>Tuesday</td>
+				<td>10:00-11:00</td>
+				<td>Dr. Nasir Mahmood</td>
+			</tr>
+				
+			<tr>
+				<td>CAO</td>
+				<td>Wednesday</td>
+				<td>14:00-15:00</td>
+				<td>Dr. Nasir Mahmood</td>
+			</tr>
+
+			<!-- Web Engineering -->
+			<tr>
+				<td>WE</td>
+				<td>Wednesday</td>
+				<td>9:00-10:00</td>
+				<td>Dr. Qaiser Riaz</td>
+			</tr>
+
+			<tr>
+				<td>WE</td>
+				<td>Thursday</td>
+				<td>9:00-10:00</td>
+				<td>Dr. Qaiser Riaz</td>
+			</tr>
+
+			<tr>
+				<td>WE</td>
+				<td>Friday</td>
+				<td>9:00-10:00</td>
+				<td>Dr. Qaiser Riaz</td>
+			</tr>
+		</table>
+	</body>
+</html>

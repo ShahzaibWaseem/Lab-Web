@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Based Calculator</title>
+	<link href="styles.css" rel="stylesheet">
+	<script type="text/javascript">
+		var textip= document.calc.inputTextField.value;
+		var stored;  
+		function number(value){
+			document.calc.inputTextField.value +=value;
+		}
+		function clear(value){
+			document.calc.inputTextField.value =value;
+		}
+		function evalua(){
+
+			document.calc.inputTextField.value = eval(document.calc.inputTextField.value);
+		}
+		function sqrti(){
+
+			document.calc.inputTextField.value = Math.sqrt(document.calc.inputTextField.value);
+
+		}
+		function square() {
+            // body...
+            document.calc.inputTextField.value = document.calc.inputTextField.value * document.calc.inputTextField.value;
+        }
+        function over(){
+        	document.calc.inputTextField.value = 1/document.calc.inputTextField.value ;
+        }
+
+        function ms(){
+        	if(eval(document.calc.inputTextField.value)== document.calc.inputTextField.value ){
+        		stored= document.calc.inputTextField.value ;
+        	}
+        }
+        function mc(){
+        	stored = 0;
+        }
+        function mr(){
+        	document.calc.inputTextField.value=  clear();
+        	document.calc.inputTextField.value = stored;
+        }
+        function dot(){
+        	document.calc.inputTextField.value += ".0";
+        }
+        function mplus(){
+        	var curr;
+        	curr = stored += '+' +textip;
+        	eqFlag=true;
+
+        	stored = eval(curr);
+        }
+
+
+
+    </script>
+</head>
+<body>
+	<form name="calc">
+		<h1 align="center">JavaScript Based Web Calculator</h1>
+		<div align="center" class="calculator">
+		
+			<input type="text" placeholder="0" id="inputTextField" name="inputTextField"><br><br>
+
+			<button type="button" onclick="mc()">MC</button>
+			<button type="button" onclick="addChar(value)" value="0">0</button>
+			<button type="button" onclick="addChar(value)" value="1">1</button>
+			<button type="button" onclick="addChar(value)" value="2">2</button>
+			<button type="button" onclick="addChar(value)" value="+">+</button><br>
+
+			<button type="button" onclick="ms()">MS</button>
+			<button type="button" onclick="addChar(value)" value="3">3</button>
+			<button type="button" onclick="addChar(value)" value="4">4</button>
+			<button type="button" onclick="addChar(value)" value="5">5</button>
+			<button type="button" onclick="addChar(value)" value="-">-</button><br>
+
+			<button type="button" onclick="mr()">MR</button>
+			<button type="button" onclick="addChar(value)" value="6">6</button>
+			<button type="button" onclick="addChar(value)" value="7">7</button>
+			<button type="button" onclick="addChar(value)" value="8">8</button>
+			<button type="button" onclick="addChar(value)" value="*">x</button><br>
+
+			<button type="button" onclick="mp()">M+</button>
+			<button type="button" onclick="addChar(value)" value="9">9</button>
+			<button type="button" onclick="invertSign()">+/-</button>
+			<button type="button" onclick="display()" id="equals">=</button>
+			<button type="button" onclick="addChar(value)" value="/">/</button><br>
+
+			<button type="button" onclick="addChar(value)" value="">1/x</button>
+			<button type="button" onclick="addChar(value)" value="">.</button>
+			<button type="button" onclick="addChar(pow(Current,2))">x<sup>2</sup></button>
+			<button type="button" onclick="addChar(sqrt(Current))">&radic;</button>
+			<button type="button" onclick="clear()">C</button>
+		</form>
+	</div>
+</body>
+</html>

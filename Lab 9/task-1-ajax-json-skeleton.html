@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AJAX JSON</title>
+
+	<script src="jquery-3.2.1.js"></script>
+
+</head>
+
+<body>
+	<button type="button" id='submitButton'>Fetch Data</button>
+	<br><br>
+	<div id="location"></div>
+	<h2 id="header"></h2>
+	<table class="empolyeesTable" border="1px" style="display:none">
+		<thead>
+			<th>Name</th>
+			<th>Designation</th>
+			<th>Salary</th>
+			<th>Joining_Date</th>
+			<th>Office</th>
+			<th>Extension</th>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
+
+	<script>
+		$(function(){
+			$('#submitButton').on('click', function(){
+				$('table').show();
+				$.ajax({
+					type: 'GET',
+					dataType: 'JSON',
+					url: 'emp_data.json',
+					success: function(data){
+						$.each(data.empolyees, function(rows, item){
+							var records = '<tr>'+ '<td>' + item.name + '</td>'+ '<td>' + item.designation + '</td>'+ '<td>' + item.salary + '</td>'+'<td>' + item.joining_date + '</td>'+ '<td>' + item.office + '</td>'+ '<td>' + item.extension + '</td>';
+							$(".empolyeesTable tbody").append(records + '</tr>');
+						})
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

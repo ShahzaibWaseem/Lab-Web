@@ -1,0 +1,14 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+#inputTextField {
+    padding: 7px 47px;
+}
+button {
+    height: 50px;
+    width: 50px;
+    color: white;
+    background-color: black;
+}

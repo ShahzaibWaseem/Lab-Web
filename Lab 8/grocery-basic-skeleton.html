@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript &amp; jQuery - Chapter 7: Introducing jQuery - Event Object</title>
+	<link rel="stylesheet" href="css/c07.css" />
+</head>
+<body>
+	<div id="page">
+		<h1 id="header">List</h1>
+		<h2>Buy groceries</h2>
+		<ul>
+			<li id="one" class="hot"><em>fresh</em> figs</li>
+			<li id="two" class="hot">pine nuts</li>
+			<li id="three" class="hot">honey</li>
+			<li id="four">balsamic vinegar</li>
+		</ul>
+		<div id="footer">
+			<br>&copy; ListKing<br>&nbsp;
+			<div id="slideAd">
+				Buy ListKing PRO For Only $1.99
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script>
+		$(function(){
+			$('ul').append('<li>linguine</li>','<li>cream</li>','<li>coconut milk</li>','<li>mushrooms</li>','<li>apples</li>','<li>strawberry</li>','<li>rice crackers</li>','<li>brie</li>','<li>rice</li>','<li>green tea</li>','<li>vine-ripened tomatoes</li>','<li>bananas</li>','<li>red kidney beans</li>','<li>haircot beans</li>','<li>lettuce</li>','<li>organic brown rice vinegar</li>','<li>sushi nori</li>','<li>garlic</li>');
+		});
+		$(window).scroll( function() {
+			var ad = $('footer')
+			var Offset = ad.offset();
+			if (Offset.top - $(window).height() - $(window).scrollTop() > 500) {
+				$("#footer").fadeIn(1500);
+			}
+			else{
+				$("#footer").fadeOut(1500);
+			}
+		});
+		</script>
+	</body>
+	</html>

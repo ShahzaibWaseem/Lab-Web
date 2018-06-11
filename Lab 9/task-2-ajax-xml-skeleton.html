@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+
+<body>
+
+<button type="button" id='submitButton'>Get my CD collection</button>
+<br><br>
+<table id="demo">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Artist</th>
+			<th>Country</th>
+			<th>Company</th>
+			<th>Price</th>
+			<th>Year</th>
+		</tr>
+	</thead>
+	<tbody>
+			
+	</tbody>
+	
+</table>
+<div id="error"></div>
+<script src="jquery-3.2.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		alert('jQuery is working');
+		$('#submitButton').on('click', function(){
+			$.ajax({ 
+		        type: 'GET', 
+		        url: 'cd_catalog.xml', 
+		        dataType:'XML', 
+
+		        success: function (data) {
+		        	$(data).find("CD").each(function() {
+	            	if( $(this).find("PRICE").attr('currency') == null){
+	            		var add = '';
+	            	}
+	            	else {
+	            		var add = $(this).find("PRICE").attr('currency');
+	            	}
+	            	var data = '<td>'+ $(this).find("TITLE").text() +'</td>';
+	            	data += '<td>'+ $(this).find("ARTIST").text() +'</td>';
+	            	data += '<td>'+ $(this).find("COUNTRY").text() +'</td>';
+	            	data += '<td>'+ $(this).find("COMPANY").text() +'</td>';
+	            	data += '<td>'+ add + $(this).find("PRICE").text() +'</td>';
+	            	data += '<td>'+ $(this).find("YEAR").text() +'</td>';
+	            	$('#demo tbody').append('<tr>'+ data +'</tr>');
+	            });
+	            },
+		        error: function(){
+		        	alert("Unable to open file, check file name");
+		        }
+		    });
+		});
+	});
+</script>
+
+</script>
+
+</body>
+</html>
